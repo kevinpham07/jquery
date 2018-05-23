@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>jquery</title>
+	<style>
+		.row{
+			display: inline-block;
+			width: 100%;
+			border-bottom: 5px solid lime;
+		}
+		h1, p {
+			width: 100%;
+			text-align: center;
+		}
+	</style>
+	<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$('img.slidedown, img.fadein').hide();
+			$('div.data').data('waifu',{ first: 'erina', second:'rindo', third:'megumin' })
+
+			$('button.hide').click(function(){
+				$('p.hide').hide();
+			})
+			$('button.show').click(function(){
+				$('p.hide').show();
+			})
+			$('button.toggle').click(function(){
+				$('img.toggle').toggle();
+			})
+			$('button.slidedown').click(function(){
+				$('img.slidedown').slideDown();
+			})
+			$('button.slideup').click(function(){
+				$('img.slidedown').slideUp();
+			})
+			$('button.slidetoggle').click(function(){
+				$('img.slidetoggle').slideToggle();
+			})
+			$('button.fadein').click(function(){
+				$('img.fadein').fadeIn();
+			})
+			$('button.fadeout').click(function(){
+				$('img.fadein').fadeOut();
+			})
+			$('button.addclass').click(function(){
+				$('p.addclass').addClass('red');
+			})
+			$('button.before').click(function(){
+				$('p.before').before('<img src="lucy.png" alt="lucy" height=150px width=100px>');
+			})
+			$('button.after').click(function(){
+				$('p.before').after('<img src="erza.png" alt="erza" height=150px width=100px>');
+			})
+			$('button.append').click(function(){
+				$('p.append').append('I am a weeb!');
+			})
+			$('button.html').click(function(){
+				$('p.html').html('<img class="html" src="zoro.png" alt="zoro">');
+			})
+			$('button.text').click(function(){
+				$('p.html').text('<img class="html" src="zoro.png" alt="zoro">')
+			})
+			$('button.attr').click(function(){
+				var source = $('img.attr').attr('src');
+				$('p.attr').text(source);
+			})
+			$('button.val').click(function(){
+				var value = $('input.val').val();
+				$('p.val').text(value);
+			})
+			$('button.data1').click(function(){
+				$('p.data').text($('div.data').data('waifu').first);
+			})
+			$('button.data2').click(function(){
+				$('p.data').text($('div.data').data('waifu').second);
+			})	
+			$('button.data3').click(function(){
+				$('p.data').text($('div.data').data('waifu').third);
+			})		
+		})
+	</script>
+</head>
+<body>		
+	<div class='row'>
+		<button class='hide' type='button'>Hide</button>
+		<button class='show' type='button'>Show</button>
+		<h1>Hide/Show</h1>
+		<p class='hide'>Click the hide button to hide paragraph and click show button to show paragraph</p>
+	</div>
+
+	<div class='row'>
+		<button class='toggle'>Toggle</button>
+		<h1>Toggle</h1>
+		<p>Click the button to toggle image</p>
+		<img class='toggle' src="esdeath.jpg" alt="esdeath">
+	</div>
+
+	<div class='row'>
+		<button class='slidedown'>SlideDown</button>
+		<button class='slideup'>SlideUp</button>
+		<h1>SlideDown</h1>
+		<p>Click the button to slide down image</p>
+		<img class='slidedown' src="naruto.jpg" alt="naruto">
+	</div>
+
+	<div class='row'>
+		<button class='slidetoggle' type='button'>SlideToggle</button>
+		<h1>SlideToggle</h1>
+		<p>Click the button to slidetoggle image</p>
+		<img class='slidetoggle' src="midoriya.jpg" alt="midoriya">
+	</div>
+
+	<div class='row'>
+		<button class='fadein' type='button'>FadeIn</button>
+		<button class='fadeout' type='button'>FadeOut</button>
+		<h1>FadeIn/Out</h1>
+		<p>Click the button to fade in and out image</p>
+		<img class='fadein' src="luffy.jpg" alt="luffy">
+	</div>
+		
+	<div class='row'>
+		<button class='before' type='button'>Before</button>
+		<button class='after' type='button'>After</button>
+		<h1>Before/After</h1>
+		<p class='before'>Click the button to add something before or after this paragraph</p>
+	</div>
+
+	<div class='row'>
+		<button class='append' type='button'>Append</button>
+		<h1>Append</h1>
+		<p class='append'>Click the button to append to this paragraph. </p>
+	</div>
+
+	<div class='row'>
+		<button class='html' type='button'>HTML</button>
+		<button class='text' type='button'>Text</button>
+		<h1>HTML</h1>
+		<p>Click the button to display image in HTML or text</p>
+		<p class='html'>here</p>
+	</div>
+
+	<div class='row'>
+		<button class='attr' type='button'>Attribute</button>
+		<h1>Attributes</h1>
+		<p>Click the button to display source attribute of image</p>
+		<p class='attr'>here</p>
+		<img class='attr' src='rindo.png' alt='rindo'>
+	</div>
+
+	<div class='row'>
+		<button class='val' type='button'>Values</button>
+		<h1>Values</h1>
+		<p>Click on the button to display the value in the box</p>
+		<p class='val'>here</p>
+		<input class='val' type='text'>Type something here!>
+	</div>
+
+	<div class='row data'>
+		<button class='data1' type='button'>Data1</button>
+		<button class='data2' type='button'>Data2</button>
+		<button class='data3' type='button'>Data3</button>
+		<h1>Data</h1>
+		<p>Click each button to see what data is stored</p>
+		<p class='data'>here</p>
+</body>
+</html>
